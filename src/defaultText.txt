@@ -1,0 +1,31 @@
+Rewrite text here
+Markdown Example
+================
+Markdown example
+----------------
+*Italics*
+**Bold**
+ ~~Strike-Through~~
+
+
+ \`
+This is some inline code.
+\` 
+
+\`\`\`
+Alternatively, code can be typed 
+in a block:
+\`\`\`
+
+
+
+[Here is a link to FreeCodeCamp](http://www.freecodecamp.com)
+>This is a block quote. 
+>More block quote.
+
+![moo](/src/assets/cow.jpg)
+
+List items:
+* Cow
+* sheep
+* pig

@@ -1,0 +1,38 @@
+body{
+background-color:skyblue;
+height: 100%;
+}
+
+img[alt=moo] {
+width:200px;
+}
+
+textarea .item {
+display: inline;
+width: auto;
+height: auto;
+}
+
+.container {
+  width:  700px;
+  height: auto;
+  display: flex;
+  padding:10px;
+}
+
+
+.caption {
+width: 300px;
+height: 20px;
+background-color: orange;
+display:inline;
+}
+
+.item {
+  width: 300px;
+  height: auto;
+  border: solid 2px white;
+  display:inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
