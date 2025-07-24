@@ -7,16 +7,22 @@ Markdown example
 **Bold**
  ~~Strike-Through~~
 
-
- \`
+<hr>
+`
 This is some inline code.
-\` 
+` 
+<hr>
 
-\`\`\`
 Alternatively, code can be typed 
 in a block:
-\`\`\`
+```
+if self.animal = cow:
+     moo();
+else if self.animal = pig:
+     oink();
+```
 
+<hr>
 
 
 [Here is a link to FreeCodeCamp](http://www.freecodecamp.com)

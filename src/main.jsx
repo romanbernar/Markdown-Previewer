@@ -8,8 +8,10 @@ root.render(
   <StrictMode>
   <div>
   <header> 
-  Welcome to my Markdown previewer. Type Markdown in the left side, and see it translated into HTML in real time. 
+  Markdown Previewer
   </header>
+    Welcome to my Markdown previewer. Type Markdown in the left side, and see it translated into HTML in real time. 
+
     < App />
     </div>
   </StrictMode>,

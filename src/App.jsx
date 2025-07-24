@@ -1,59 +1,48 @@
 import { useState } from 'react'
-import React from 'react';
-import { createRoot } from 'react-dom/client';
 import './App.css'
 import { marked  } from 'marked';
+import defaultText from './defaultText.txt?raw'
 
-const defaultText = `Rewrite text here
-Markdown Example
-================
-Markdown example
-----------------
-*Italics*
-**Bold**
- ~~Strike-Through~~
-
-
- \`
-This is some inline code.
-\` 
-
-\`\`\`
-Alternatively, code can be typed 
-in a block:
-\`\`\`
-
-
-
-[Here is a link to FreeCodeCamp](http://www.freecodecamp.com)
->This is a block quote. 
->More block quote.
-
-![moo](/src/assets/cow.jpg)
-
-List items:
-* Cow
-* sheep
-* pig
-`
 function App() {
  /* React code for Markdown Preview.  
 /* Uses purify.js and marked.js
 */ 
 
-//Filler text for textbox
-
+//Filler text from defaultText.txt for textbox
 const [text, setText] = useState(marked(defaultText));
-console.log(text)
 marked.use({
 breaks: true
 });
   //< Rendered text={text} />
 const clean = DOMPurify.sanitize(marked(defaultText));
+
+const getText = () => {
+  const textbox = document.querySelector("textarea");
+  textbox.value=(defaultText);
+  setText(marked(defaultText));
+
+}
+
+const resetText = () => {
+  const textbox = document.querySelector("textarea");
+  textbox.value=('');
+  setText('');
+
+}
+
+console.log('26 is good')
 return(
-      <div className="container">
+  <>
+  <div className="container"> 
+    <button title="click to see more information" onClick={getText}>
+    More Info
+   </button>
+    <button title="Click to reset text" onClick={resetText}>
+    Clear Text
+    </button>
+  </div>
      < RenderMarkdown text={text} setText={setText} />
-      </div>
+      </>
 )
 
 }
@@ -62,16 +51,19 @@ function RenderMarkdown({text, setText}) {
  // HTML => Markdown
   const handleChange = (event) => {
     // Sanitizes text and converts to Markdown before saving to `text`
-    console.log(marked(DOMPurify.sanitize(event.target.value)));
-    setText(marked(DOMPurify.sanitize(event.target.value)));
+    console.log('handling change');
+    //console.log(marked(DOMPurify.sanitize(event.target.value)));
+    setText(DOMPurify.sanitize(marked(event.target.value)));
     
   };
     
     return(
       <> 
-      < textarea className = "item" rows="50" cols="20" defaultValue = {text}
+        <div className="container">
+      < textarea className = "item" rows="50" cols="20" defaultValue = {''}
       onChange= {handleChange} />
       <div className = "item" dangerouslySetInnerHTML={{__html: text}} onChange = {handleChange} />
+           </div>
       </>
     ) 
 }

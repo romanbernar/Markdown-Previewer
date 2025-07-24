@@ -3,6 +3,14 @@ background-color:skyblue;
 height: 100%;
 }
 
+button{
+margin:5px;
+}
+
+header{
+font-size:26px;
+}
+
 img[alt=moo] {
 width:200px;
 }
@@ -14,7 +22,7 @@ height: auto;
 }
 
 .container {
-  width:  700px;
+  width:  auto;
   height: auto;
   display: flex;
   padding:10px;
